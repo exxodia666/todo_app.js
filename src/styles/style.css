@@ -1,0 +1,108 @@
+* {
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  margin: 0;
+  padding: 0;
+}
+
+* .App {
+  padding: 1em;
+  border-radius: 5px;
+  width: 20em;
+  border: 1px solid black;
+  -webkit-box-align: start;
+      -ms-flex-align: start;
+          align-items: flex-start;
+  margin: 1em auto;
+  -webkit-box-shadow: 0 0 10px rgba(0, 0, 0, 0.6);
+          box-shadow: 0 0 10px rgba(0, 0, 0, 0.6);
+}
+
+* ul {
+  list-style-type: none;
+}
+
+* ul li {
+  margin: 0.5em;
+}
+
+* button {
+  font-weight: 700;
+  color: white;
+  text-decoration: none;
+  padding: 0.8em 1em calc(.8em + 3px);
+  border-radius: 3px;
+  background: #40c781;
+  -webkit-box-shadow: 0 -3px #35a76e inset;
+          box-shadow: 0 -3px #35a76e inset;
+  -webkit-transition: 0.2s;
+  transition: 0.2s;
+}
+
+* button:hover {
+  background: #35a76e;
+}
+
+* button:active {
+  background: #21935a;
+  -webkit-box-shadow: 0 3px #21935a inset;
+          box-shadow: 0 3px #21935a inset;
+}
+
+* input {
+  margin: 1.5px;
+  height: 2em;
+  border-radius: 4px;
+  width: 14em;
+  padding: 0.2em;
+  font-size: 1.1em;
+}
+
+* .completed {
+  text-decoration: overline;
+}
+
+.todo {
+  width: 18.4em;
+  height: auto;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  margin: 5px;
+  border: 1px solid black;
+  border-radius: 10px;
+  list-style: none;
+  -webkit-box-shadow: 0 0 10px rgba(0, 0, 0, 0.6);
+          box-shadow: 0 0 10px rgba(0, 0, 0, 0.6);
+  padding: 0.5em;
+}
+
+.todo div {
+  margin-left: 0.5em;
+  cursor: pointer;
+  display: block;
+  max-width: 19em;
+  height: auto;
+  width: 250px;
+  word-wrap: break-word;
+  font-size: 1.2em;
+}
+
+.todo img {
+  height: 2em;
+  width: 2em;
+}
+
+.row {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+}
+/*# sourceMappingURL=style.css.map */
