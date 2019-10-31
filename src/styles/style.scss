@@ -4,60 +4,54 @@
         padding: 0;
         
         .App {
+                display: flex;
+                flex-direction: column;
                 padding: 1em;
+                padding-bottom: 0.5em;
                 border-radius: 5px;
-                width: 20em;
+                width: 30em;
                 border: 1px solid black;
                 align-items: flex-start;
                 margin: 1em auto;
                 box-shadow: 0 0 10px rgba(0,0,0,0.6);
-        }
-        ul {
-                list-style-type: none;
-                li {
-                        margin: 0.5em;
+                ul {
+                        list-style-type: none;
+                        li {
+                                margin: 0.5em;
+                        }
                 }
-        }
-        
-
-                button {
-                        font-weight: 700;
-                        color: white;
-                        text-decoration: none;
-                        padding: .8em 1em calc(.8em + 3px);
-                        border-radius: 3px;
-                        background: rgb(64,199,129);
-                        box-shadow: 0 -3px rgb(53,167,110) inset;
-                        transition: 0.2s;
-                      } 
-                      button:hover { background: rgb(53, 167, 110); }
-                      button:active {
-                        background: rgb(33,147,90);
-                        box-shadow: 0 3px rgb(33,147,90) inset;
-                      }
-        input {
-                margin: 1.5px;
-                height: 2em;
-                border-radius: 4px;
-                width: 14em;
-                padding: 0.2em;
-                font-size: 1.1em;
-                
+                .add {
+                        cursor: pointer;
+                        margin: auto;
+                        height: 6em;
+                        width: 6em;
+                }
+                input {
+                        margin: 2.5px;
+                        height: 2em;
+                        border-radius: 4px;
+                        border: 1px solid black;
+                        width: 26.4em;
+                        padding: 0.2em;
+                        font-size: 1.1em;
+                        margin-bottom: 0.8em;
+                        box-shadow: 0 0 10px rgba(0,0,0,0.6);
+                        
+                }
         }
         .completed {
                 text-decoration: overline;
         }
-
 }
 
 .todo {
-        width: 18.4em;
+        width: 28em;
         height: auto;
         display: flex;
         flex-direction: row;
-        margin: 5px;
+        margin: 8px;
         border: 1px solid black;
-        border-radius: 10px;
+        border-radius: 6px;
         list-style: none;
         box-shadow: 0 0 10px rgba(0,0,0,0.6);
         padding: 0.5em;
@@ -65,18 +59,18 @@
                 margin-left: 0.5em;
                 cursor: pointer;
                 display: block;
-                max-width: 19em;
+                max-width: 21em;
                 height: auto;
-                width: 250px;
                 word-wrap: break-word;
-                
                 font-size: 1.2em;
-                //text-shadow: 0 1px 2px rgba(0, 0, 0, 0.6);
         }
-        img {
+        .delete {
                 height: 2em;
                 width: 2em;
+                transition: 0.2s;
+                cursor: pointer;
         }
+        
         
 }
 

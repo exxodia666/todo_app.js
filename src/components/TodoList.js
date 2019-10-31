@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import '../styles/style.css';
-import deleteImage from '../img/del.png';
+import deleteImage from '../img/delete2.png';
+import addImage from '../img/plus.png';
 
 export default class TodoList extends Component {
 
@@ -22,7 +23,7 @@ export default class TodoList extends Component {
         var liStyle = { 'textDecoration': 'line-through' };
       }
       return (<li className = 'todo'>
-                              <img src = {deleteImage} onClick = { () => { deleteTodo(appState.indexOf(item))} } alt='Delete'/>
+                              <img  className = 'delete' src = {deleteImage} onClick = { () => { deleteTodo(appState.indexOf(item))} } alt='Delete'/>
                               <div style = { liStyle }  onClick = { () => { reverseTodo({ completed: item.completed, id: appState.indexOf(item) });}}> 
                                 {item.text} 
                               </div>
@@ -33,19 +34,15 @@ export default class TodoList extends Component {
     return (
             <div className='App'>
             <div className='row'>
-                <button  onClick = {  () => { 
-                    if(this.input.value) { 
-                      addTodo(this.input.value)
-                      this.input.value = '';
-                    }}}>
-                  Add
-                  </button>
+                
                   <input   type='text' ref =  { e => this.input = e} />
             </div>
               
               <ul> 
                 { listItems }
               </ul>
+              <img className='add' src={addImage} onClick = {  () => { if(this.input.value) { addTodo(this.input.value); this.input.value = '';}}} alt = 'Add'/>
+                
            </div>);
   }
 };
