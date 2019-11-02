@@ -5,9 +5,11 @@ import { rootReducer } from './reducers/rootReducer'
 import TodoListContainer from './containers/TodoListContainer'
 
 export const initialState = [
+  /*
   {id: 1, text: 'text1dasdasdsadsadsadsadasdasdasdasdasdasdasdasd', completed: false},
   {id: 2, text: '.data', completed: false},
   {id: 3, text: 'action.data', completed: false},
+  */
 ];
 
 const store = createStore(rootReducer, initialState);

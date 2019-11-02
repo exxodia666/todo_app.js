@@ -1,9 +1,13 @@
+.body {
+        background: rgb(66,92,251);
+        background: radial-gradient(circle, rgba(66,92,251,1) 0%, rgba(70,181,252,1) 100%); 
+}
 *{
         font-family: Verdana, Geneva, Tahoma, sans-serif;
         margin: 0;
         padding: 0;
-        
         .App {
+                background-color: white;
                 display: flex;
                 flex-direction: column;
                 padding: 1em;
@@ -13,7 +17,7 @@
                 border: 1px solid black;
                 align-items: flex-start;
                 margin: 1em auto;
-                box-shadow: 0 0 10px rgba(0,0,0,0.6);
+                box-shadow: 0 0 15px rgba(0,0,0,0.6);
                 ul {
                         list-style-type: none;
                         li {
@@ -22,10 +26,22 @@
                 }
                 .add {
                         cursor: pointer;
-                        margin: auto;
-                        height: 6em;
-                        width: 6em;
+                        margin: 1em auto;
+                        height: 5em;
+                        width: 5em;
+                        //border: 1px  solid black;
+                        border-radius: 50%; 
+                        box-shadow: 0 0 10px rgba(0,0,0,0.9);
                 }
+                .add:hover {
+                        -webkit-transform: scale(1.1);
+                        -ms-transform: scale(1.1);
+                        transform: scale(1.1);
+                        transition: 0.5s;
+                        
+                }
+                
+
                 input {
                         margin: 2.5px;
                         height: 2em;
@@ -36,8 +52,13 @@
                         font-size: 1.1em;
                         margin-bottom: 0.8em;
                         box-shadow: 0 0 10px rgba(0,0,0,0.6);
-                        
                 }
+                input:hover{
+                        -webkit-transform: scale(1.05);
+                        -ms-transform: scale(1.05);
+                        transform: scale(1.05);
+                        transition: 0.5s;
+}
         }
         .completed {
                 text-decoration: overline;
@@ -55,6 +76,7 @@
         list-style: none;
         box-shadow: 0 0 10px rgba(0,0,0,0.6);
         padding: 0.5em;
+                        
         div {
                 margin-left: 0.5em;
                 cursor: pointer;
@@ -72,6 +94,12 @@
         }
         
         
+}
+.todo:hover{
+                        -webkit-transform: scale(1.05);
+                        -ms-transform: scale(1.05);
+                        transform: scale(1.05);
+                        transition: 0.5s;
 }
 
 .row {

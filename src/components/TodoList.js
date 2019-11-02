@@ -35,7 +35,7 @@ export default class TodoList extends Component {
             <div className='App'>
             <div className='row'>
                 
-                  <input   type='text' ref =  { e => this.input = e} />
+                  <input placeholder=' Type your task'  type='text' ref =  { e => this.input = e} />
             </div>
               
               <ul> 

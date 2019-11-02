@@ -1,3 +1,8 @@
+.body {
+  background: #425cfb;
+  background: radial-gradient(circle, #425cfb 0%, #46b5fc 100%);
+}
+
 * {
   font-family: Verdana, Geneva, Tahoma, sans-serif;
   margin: 0;
@@ -5,6 +10,7 @@
 }
 
 * .App {
+  background-color: white;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -21,8 +27,8 @@
       -ms-flex-align: start;
           align-items: flex-start;
   margin: 1em auto;
-  -webkit-box-shadow: 0 0 10px rgba(0, 0, 0, 0.6);
-          box-shadow: 0 0 10px rgba(0, 0, 0, 0.6);
+  -webkit-box-shadow: 0 0 15px rgba(0, 0, 0, 0.6);
+          box-shadow: 0 0 15px rgba(0, 0, 0, 0.6);
 }
 
 * .App ul {
@@ -35,9 +41,19 @@
 
 * .App .add {
   cursor: pointer;
-  margin: auto;
-  height: 6em;
-  width: 6em;
+  margin: 1em auto;
+  height: 5em;
+  width: 5em;
+  border-radius: 50%;
+  -webkit-box-shadow: 0 0 10px rgba(0, 0, 0, 0.9);
+          box-shadow: 0 0 10px rgba(0, 0, 0, 0.9);
+}
+
+* .App .add:hover {
+  -webkit-transform: scale(1.1);
+  transform: scale(1.1);
+  -webkit-transition: 0.5s;
+  transition: 0.5s;
 }
 
 * .App input {
@@ -51,6 +67,13 @@
   margin-bottom: 0.8em;
   -webkit-box-shadow: 0 0 10px rgba(0, 0, 0, 0.6);
           box-shadow: 0 0 10px rgba(0, 0, 0, 0.6);
+}
+
+* .App input:hover {
+  -webkit-transform: scale(1.05);
+  transform: scale(1.05);
+  -webkit-transition: 0.5s;
+  transition: 0.5s;
 }
 
 * .completed {
@@ -92,6 +115,13 @@
   -webkit-transition: 0.2s;
   transition: 0.2s;
   cursor: pointer;
+}
+
+.todo:hover {
+  -webkit-transform: scale(1.05);
+  transform: scale(1.05);
+  -webkit-transition: 0.5s;
+  transition: 0.5s;
 }
 
 .row {
