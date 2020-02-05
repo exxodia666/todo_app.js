@@ -1,5 +1,5 @@
 {
-  "homepage": "https://github.com/exxodia666/todo_app.js",
+  "homepage": "http://exxodia666.github.io/todo_app.js",
   "name": "todoapp",
   "version": "0.1.0",
   "private": true,
@@ -19,7 +19,6 @@
     "eject": "react-scripts eject",
     "predeploy": "npm run build",
     "deploy": "gh-pages -d build"
-
   },
   "eslintConfig": {
     "extends": "react-app"
