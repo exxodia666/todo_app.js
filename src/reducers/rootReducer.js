@@ -3,13 +3,11 @@ import { persistedState } from '../Store';
 
 export function rootReducer(state = persistedState, action) {
     switch (action.type) {
-
         case actions.ADD_TODO: 
             return [...state, {id: ++state.length, text: action.data, completed: false}];
 
         case actions.DELETE_TODO:
             let newState = state;
-            ///console.log(action.data);
             newState.splice(action.data, 1);
             return [...newState];
 
@@ -22,12 +20,10 @@ export function rootReducer(state = persistedState, action) {
             if( completed === false ){ 
                 const newState = state;
                 newState[id].completed = true;
-                console.log(newState);
                 return [...newState];
             } else if ( completed === true){
                 const newState = state;
-                newState[id].completed = false;
-                console.log(newState);
+                newState[id].completed = false;s
                 return [...newState];
             } else { 
                 return [...state]}

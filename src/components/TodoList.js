@@ -15,7 +15,6 @@ export default class TodoList extends Component {
     });
 
     const appState    = this.props.store;
-    console.log(appState);
     const addTodo     = this.props.actions.addTodo;
     const reverseTodo = this.props.actions.reverseTodo;
     const deleteTodo  = this.props.actions.deleteTodo;
