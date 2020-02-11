@@ -1,0 +1,23 @@
+{
+  "files": {
+    "main.css": "/todo_app.js/static/css/main.84d16bce.chunk.css",
+    "main.js": "/todo_app.js/static/js/main.d95d604e.chunk.js",
+    "main.js.map": "/todo_app.js/static/js/main.d95d604e.chunk.js.map",
+    "runtime-main.js": "/todo_app.js/static/js/runtime-main.5867e2c5.js",
+    "runtime-main.js.map": "/todo_app.js/static/js/runtime-main.5867e2c5.js.map",
+    "static/js/2.61f5861d.chunk.js": "/todo_app.js/static/js/2.61f5861d.chunk.js",
+    "static/js/2.61f5861d.chunk.js.map": "/todo_app.js/static/js/2.61f5861d.chunk.js.map",
+    "index.html": "/todo_app.js/index.html",
+    "precache-manifest.46987f31b630696c5180c2208519e9c7.js": "/todo_app.js/precache-manifest.46987f31b630696c5180c2208519e9c7.js",
+    "service-worker.js": "/todo_app.js/service-worker.js",
+    "static/css/main.84d16bce.chunk.css.map": "/todo_app.js/static/css/main.84d16bce.chunk.css.map",
+    "static/js/2.61f5861d.chunk.js.LICENSE.txt": "/todo_app.js/static/js/2.61f5861d.chunk.js.LICENSE.txt",
+    "static/media/delete2.png": "/todo_app.js/static/media/delete2.eba72e21.png"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.5867e2c5.js",
+    "static/js/2.61f5861d.chunk.js",
+    "static/css/main.84d16bce.chunk.css",
+    "static/js/main.d95d604e.chunk.js"
+  ]
+}
