@@ -23,7 +23,7 @@ export function rootReducer(state = persistedState, action) {
                 return [...newState];
             } else if ( completed === true){
                 const newState = state;
-                newState[id].completed = false;s
+                newState[id].completed = false;
                 return [...newState];
             } else { 
                 return [...state]}
