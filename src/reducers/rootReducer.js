@@ -1,7 +1,7 @@
 import * as actions from '../actions/actions'
-import {initialState} from '../App';
+import { persistedState } from '../Store';
 
-export function rootReducer(state = initialState, action) {
+export function rootReducer(state = persistedState, action) {
     switch (action.type) {
 
         case actions.ADD_TODO: 
