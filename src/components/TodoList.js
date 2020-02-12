@@ -1,11 +1,10 @@
 import React, { Component } from 'react';
 import '../styles/style.css';
-import deleteImage from '../img/delete2.png';
-import addImage from '../img/plus.png';
 
 export default class TodoList extends Component {
 
   render() {
+
     document.addEventListener('keydown', (e) => {
       if(e.code === 'Enter' && this.input.value){
         addTodo(this.input.value);
@@ -23,7 +22,7 @@ export default class TodoList extends Component {
         var liStyle = { 'textDecoration': 'line-through' };
       }
       return (<li className = 'todo'>
-                              <img  className = 'delete' src = {deleteImage} onClick = { () => { deleteTodo(appState.indexOf(item))} } alt='Delete'/>
+                              <a  className = 'delete'  onClick = { () => { deleteTodo(appState.indexOf(item))} }> </a> 
                               <div style = { liStyle }  onClick = { () => { reverseTodo({ completed: item.completed, id: appState.indexOf(item) });}}> 
                                 {item.text} 
                               </div>
@@ -36,12 +35,15 @@ export default class TodoList extends Component {
             <div className='row'>
                 
                   <input placeholder=' Type your task'  type='text' ref =  { e => this.input = e} />
+                  <a className='add' onClick = {  () => { if(this.input.value) { addTodo(this.input.value); this.input.value = '';}}} >
+                  add
+                  </a>
             </div>
               
               <ul> 
                 { listItems }
               </ul>
-              <img className='add' src={addImage} onClick = {  () => { if(this.input.value) { addTodo(this.input.value); this.input.value = '';}}} alt = 'Add'/>
+              
                 
            </div>);
   }
