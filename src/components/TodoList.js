@@ -1,7 +1,5 @@
 import React, { Component } from 'react'
 import '../styles/style.css'
-//import {buttons} from '../'
-import { deleteButton } from '../svg/delete.svg'
 export default class TodoList extends Component {
 
   render() {
@@ -16,7 +14,7 @@ export default class TodoList extends Component {
     const listItems   = appState.map((item) => {
       if(item.completed === true) { var liStyle = { 'textDecoration': 'line-through' }};
       return (<li className = 'todo'>
-                              <img className = 'delete' src={deleteButton}  onClick = { () => { deleteTodo(appState.indexOf(item))} } /> 
+                              <a className = 'delete' onClick = { () => { deleteTodo(appState.indexOf(item))} }> Delete</a> 
                               <div style = { liStyle }  onClick = { () => { reverseTodo({ completed: item.completed, id: appState.indexOf(item) });}}> 
                                 {item.text} 
                               </div>
@@ -27,12 +25,13 @@ export default class TodoList extends Component {
     return (
             <div className='App'>
                   <input placeholder=' Type your task'  type='text' ref =  { e => this.input = e} />
+                  <a className='add'  onClick = {  () => { if(this.input.value) { addTodo(this.input.value); this.input.value = '';}}} >
+                  Add
+                  </a>
               <ul> 
                 { listItems }
               </ul>
-              <a className='add'  onClick = {  () => { if(this.input.value) { addTodo(this.input.value); this.input.value = '';}}} >
-                Add
-              </a>
+              
                 
            </div>);
   }

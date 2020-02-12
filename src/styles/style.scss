@@ -3,12 +3,12 @@
         margin: 0;
         padding: 0;
 .App {
-       // border: 1px solid black;
+        //background-color: red;
         display: flex;
         flex-direction: column;
         padding: 1em;
         padding-bottom: 0.5em;                  
-        width: 60em;
+        width: 50em;
         align-items: flex-start;
         margin: 1em auto;
 ul {
@@ -31,15 +31,34 @@ input {
         font-size: 1.1em;
 }
 input:hover{
-        -webkit-transform: scale(1.05);
-        -ms-transform: scale(1.05);
-        transform: scale(1.05);
-        transition: 0.5s;
+        border: 1px solid blue;
 }
 }
 .add {
-        border: 1px solid black;
-        background-color: red;
+        cursor: pointer;
+        display:inline-block;
+        padding: 0.7em 1.4em;
+        margin:0 auto;
+        border-radius:0.15em;
+        box-sizing: border-box;
+        text-decoration:none;
+        font-family:'Roboto',sans-serif;
+        text-transform:uppercase;
+        font-weight:400;
+        color:#FFFFFF;
+        background-color:#3369ff;
+        box-shadow:inset 0 -0.6em 0 -0.35em rgba(0,0,0,0.17);
+        text-align: center;
+        position:relative;
+}
+.add:active{
+        top:0.1em;
+}
+@media all and (max-width:30em){
+.add{
+        display:block;
+        margin:0.4em auto;
+}
 }
 
 .completed {
@@ -47,48 +66,80 @@ input:hover{
         }
 }
 .todo {
-        background-color: white;
-        width: 28em;
+        //min-height: 2em;
+       // background-color: red;
+        width: 30em;
         height: auto;
         display: flex;
         flex-direction: row;
         margin: 8px;
-        border: 1px solid black;
+        border: 1px solid black; 
         border-radius: 6px;
         list-style: none;
-        ///box-shadow: 0 0 10px rgba(0,0,0,0.6);
+        box-shadow: 0 0 10px rgba(0,0,0,0.2);
         padding: 0.5em;
-div {
+div{
+        line-height: 2em;
+        //background-color: chartreuse;
         margin-left: 0.5em;
         cursor: pointer;
         display: block;
-        max-width: 21em;
-        height: auto;
+        max-width: 23.4em;
+        min-height: 2em;
         word-wrap: break-word;
         font-size: 1.2em;
 }
 .delete {
-        height: 2em;
-        width: 2em;
-        transition: 0.2s;
+        height: 2.65em;
         cursor: pointer;
+        display:inline-block;
+        padding: 0.7em 1.4em;
+        border-radius:0.15em;
+        box-sizing: border-box;
+        text-decoration:none;
+        font-family:'Roboto',sans-serif;
+        text-transform:uppercase;
+        font-weight:400;
+        color:#FFFFFF;
+        background-color:#db0000;
+        box-shadow:inset 0 -0.6em 0 -0.35em rgba(0,0,0,0.17);
+        text-align: center;
+        position:relative;
+}
+.delete:active{
+        top:0.1em;
+}
+@media all and (max-width:30em){
+.delete{
+        display:block;
+        margin:0.4em auto;
+}
 }
 
 
 }
 .todo:hover{
-        -webkit-transform: scale(1.05);
-        -ms-transform: scale(1.05);
-        transform: scale(1.05);
-        transition: 0.5s;
+        border: 1px solid blue;
 }
 .row {
         display: flex;
         flex-direction: row;
 }    
 
-@media screen and (max-width: 426px){
-*{
-        background-color: red;
+@media screen and (max-width: 426px) {
+.App {
+                  //background-color: red;
+                width: 28em;
+        input {
+                width: 95%; 
+        }
+        .todo {
+                margin: 1em  auto;
+                width: 25em;
+        }
+        div{
+                max-width: 11em;
+        }
+
 }
 }

@@ -14,7 +14,7 @@
           flex-direction: column;
   padding: 1em;
   padding-bottom: 0.5em;
-  width: 60em;
+  width: 50em;
   -webkit-box-align: start;
       -ms-flex-align: start;
           align-items: flex-start;
@@ -44,15 +44,38 @@
 }
 
 * .App input:hover {
-  -webkit-transform: scale(1.05);
-  transform: scale(1.05);
-  -webkit-transition: 0.5s;
-  transition: 0.5s;
+  border: 1px solid blue;
 }
 
 * .add {
-  border: 1px solid black;
-  background-color: red;
+  cursor: pointer;
+  display: inline-block;
+  padding: 0.7em 1.4em;
+  margin: 0 auto;
+  border-radius: 0.15em;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  text-decoration: none;
+  font-family: 'Roboto',sans-serif;
+  text-transform: uppercase;
+  font-weight: 400;
+  color: #FFFFFF;
+  background-color: #3369ff;
+  -webkit-box-shadow: inset 0 -0.6em 0 -0.35em rgba(0, 0, 0, 0.17);
+          box-shadow: inset 0 -0.6em 0 -0.35em rgba(0, 0, 0, 0.17);
+  text-align: center;
+  position: relative;
+}
+
+* .add:active {
+  top: 0.1em;
+}
+
+@media all and (max-width: 30em) {
+  * .add {
+    display: block;
+    margin: 0.4em auto;
+  }
 }
 
 * .completed {
@@ -60,8 +83,7 @@
 }
 
 .todo {
-  background-color: white;
-  width: 28em;
+  width: 30em;
   height: auto;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -74,32 +96,55 @@
   border: 1px solid black;
   border-radius: 6px;
   list-style: none;
+  -webkit-box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+          box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
   padding: 0.5em;
 }
 
 .todo div {
+  line-height: 2em;
   margin-left: 0.5em;
   cursor: pointer;
   display: block;
-  max-width: 21em;
-  height: auto;
+  max-width: 23.4em;
+  min-height: 2em;
   word-wrap: break-word;
   font-size: 1.2em;
 }
 
 .todo .delete {
-  height: 2em;
-  width: 2em;
-  -webkit-transition: 0.2s;
-  transition: 0.2s;
+  height: 2.65em;
   cursor: pointer;
+  display: inline-block;
+  padding: 0.7em 1.4em;
+  border-radius: 0.15em;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  text-decoration: none;
+  font-family: 'Roboto',sans-serif;
+  text-transform: uppercase;
+  font-weight: 400;
+  color: #FFFFFF;
+  background-color: #db0000;
+  -webkit-box-shadow: inset 0 -0.6em 0 -0.35em rgba(0, 0, 0, 0.17);
+          box-shadow: inset 0 -0.6em 0 -0.35em rgba(0, 0, 0, 0.17);
+  text-align: center;
+  position: relative;
+}
+
+.todo .delete:active {
+  top: 0.1em;
+}
+
+@media all and (max-width: 30em) {
+  .todo .delete {
+    display: block;
+    margin: 0.4em auto;
+  }
 }
 
 .todo:hover {
-  -webkit-transform: scale(1.05);
-  transform: scale(1.05);
-  -webkit-transition: 0.5s;
-  transition: 0.5s;
+  border: 1px solid blue;
 }
 
 .row {
@@ -113,8 +158,18 @@
 }
 
 @media screen and (max-width: 426px) {
-  * {
-    background-color: red;
+  .App {
+    width: 28em;
+  }
+  .App input {
+    width: 95%;
+  }
+  .App .todo {
+    margin: 1em  auto;
+    width: 25em;
+  }
+  .App div {
+    max-width: 11em;
   }
 }
 /*# sourceMappingURL=style.css.map */
