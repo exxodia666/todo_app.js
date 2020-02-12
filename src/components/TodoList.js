@@ -1,28 +1,22 @@
-import React, { Component } from 'react';
-import '../styles/style.css';
-
+import React, { Component } from 'react'
+import '../styles/style.css'
+//import {buttons} from '../'
+import { deleteButton } from '../svg/delete.svg'
 export default class TodoList extends Component {
 
   render() {
 
-    document.addEventListener('keydown', (e) => {
-      if(e.code === 'Enter' && this.input.value){
-        addTodo(this.input.value);
-        this.input.value = '';
-        e.preventDefault();
-      }
-    });
+    document.addEventListener('keydown', (e) => { if(e.code === 'Enter' && this.input.value) { addTodo(this.input.value); this.input.value = ''; e.preventDefault()}});
 
     const appState    = this.props.store;
     const addTodo     = this.props.actions.addTodo;
     const reverseTodo = this.props.actions.reverseTodo;
     const deleteTodo  = this.props.actions.deleteTodo;
+
     const listItems   = appState.map((item) => {
-      if(item.completed === true) {
-        var liStyle = { 'textDecoration': 'line-through' };
-      }
+      if(item.completed === true) { var liStyle = { 'textDecoration': 'line-through' }};
       return (<li className = 'todo'>
-                              <a  className = 'delete'  onClick = { () => { deleteTodo(appState.indexOf(item))} }> </a> 
+                              <img className = 'delete' src={deleteButton}  onClick = { () => { deleteTodo(appState.indexOf(item))} } /> 
                               <div style = { liStyle }  onClick = { () => { reverseTodo({ completed: item.completed, id: appState.indexOf(item) });}}> 
                                 {item.text} 
                               </div>
@@ -32,18 +26,13 @@ export default class TodoList extends Component {
     let input = '';
     return (
             <div className='App'>
-            <div className='row'>
-                
                   <input placeholder=' Type your task'  type='text' ref =  { e => this.input = e} />
-                  <a className='add' onClick = {  () => { if(this.input.value) { addTodo(this.input.value); this.input.value = '';}}} >
-                  add
-                  </a>
-            </div>
-              
               <ul> 
                 { listItems }
               </ul>
-              
+              <a className='add'  onClick = {  () => { if(this.input.value) { addTodo(this.input.value); this.input.value = '';}}} >
+                Add
+              </a>
                 
            </div>);
   }
