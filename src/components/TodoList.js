@@ -1,5 +1,14 @@
 import React, { Component } from 'react'
 import '../styles/style.css'
+
+
+
+
+
+
+
+
+//todo hooks
 export default class TodoList extends Component {
 
   render() {
@@ -31,8 +40,20 @@ export default class TodoList extends Component {
               <ul> 
                 { listItems }
               </ul>
-              
-                
+
+              {/*Todo filtering
+              <div className='row'>
+                  <a className='add'  onClick = {  () => { if(this.input.value) { addTodo(this.input.value); this.input.value = '';}}} >
+                  All
+                  </a>
+                  <a className='add'  onClick = {  () => { if(this.input.value) { addTodo(this.input.value); this.input.value = '';}}} >
+                  Completed
+                  </a>
+                  <a className='add'  onClick = {  () => { if(this.input.value) { addTodo(this.input.value); this.input.value = '';}}} >
+                  Active
+                  </a>
+              </div>*/
+              }
            </div>);
   }
 };
