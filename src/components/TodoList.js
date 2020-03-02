@@ -1,59 +1,94 @@
-import React, { Component } from 'react'
+import React, { useState } from 'react'
 import '../styles/style.css'
 
-
-
-
-
-
-
-
 //todo hooks
-export default class TodoList extends Component {
 
-  render() {
 
-    document.addEventListener('keydown', (e) => { if(e.code === 'Enter' && this.input.value) { addTodo(this.input.value); this.input.value = ''; e.preventDefault()}});
+const TodoList = props => {
+  let input = '';
+  //const [input, setInput] = useState('');
 
-    const appState    = this.props.store;
-    const addTodo     = this.props.actions.addTodo;
-    const reverseTodo = this.props.actions.reverseTodo;
-    const deleteTodo  = this.props.actions.deleteTodo;
+  document.addEventListener('keydown', (e) => { 
+    if(e.code === 'Enter' && input.value) { 
+      addTodo(input.value); 
+      input.value = ''; 
+      e.preventDefault()
+    }
+  });
 
-    const listItems   = appState.map((item) => {
-      if(item.completed === true) { var liStyle = { 'textDecoration': 'line-through' }};
-      return (<li className = 'todo'>
-                              <a className = 'delete' onClick = { () => { deleteTodo(appState.indexOf(item))} }> Delete</a> 
-                              <div style = { liStyle }  onClick = { () => { reverseTodo({ completed: item.completed, id: appState.indexOf(item) });}}> 
-                                {item.text} 
-                              </div>
-              </li>);
-    });
+    const appState    = props.store;
+    const addTodo     = props.actions.addTodo;
+    const reverseTodo = props.actions.reverseTodo;
+    const deleteTodo  = props.actions.deleteTodo;
 
-    let input = '';
+    const mapState = state => {
+      return state.map((item) => {
+        if(item.completed === true) { 
+          var liStyle = { 
+            'textDecoration': 'line-through' }
+        };
+        return (<li className = 'todo'>
+                                <a className = 'delete' 
+                                href='/' 
+                                onClick = { () => { 
+                                  deleteTodo(appState.indexOf(item))
+                                  } 
+                                }>Delete</a> 
+
+                                <div style = { liStyle }  
+                                     onClick = { () => { 
+                                     reverseTodo({ completed: item.completed, id: appState.indexOf(item) });}}> 
+                                  {item.text} 
+                                </div>
+                </li>);
+    });}
+
+
+ 
+/*
+    const handleChange = event => {
+      setInput('');
+      setInput(event.target.value);
+    }
+*/
     return (
             <div className='App'>
-                  <input placeholder=' Type your task'  type='text' ref =  { e => this.input = e} />
-                  <a className='add'  onClick = {  () => { if(this.input.value) { addTodo(this.input.value); this.input.value = '';}}} >
+                  <input placeholder='Type your task'  
+                         type='text' 
+                         ref = { e => { 
+                           input = e; 
+                          }  
+                        }
+                  />
+
+                  <a className='add' 
+                    onClick = {  
+                      () => { 
+                        if(input.value) { 
+                        addTodo(input.value);
+                        input.value = ''; 
+                      } else { 
+                        alert('type your message')}}} >
                   Add
                   </a>
               <ul> 
-                { listItems }
+                { mapState(appState) }
               </ul>
 
               {/*Todo filtering
               <div className='row'>
-                  <a className='add'  onClick = {  () => { if(this.input.value) { addTodo(this.input.value); this.input.value = '';}}} >
+                  <a className='add' href='/'  onClick = {  () => { if(this.input.value) { addTodo(this.input.value); this.input.value = '';}}} >
                   All
                   </a>
-                  <a className='add'  onClick = {  () => { if(this.input.value) { addTodo(this.input.value); this.input.value = '';}}} >
+                  <a className='add' href='/'  onClick = {  () => { if(this.input.value) { addTodo(this.input.value); this.input.value = '';}}} >
                   Completed
                   </a>
-                  <a className='add'  onClick = {  () => { if(this.input.value) { addTodo(this.input.value); this.input.value = '';}}} >
+                  <a className='add' href='/'  onClick = {  () => { if(this.input.value) { addTodo(this.input.value); this.input.value = '';}}} >
                   Active
                   </a>
               </div>*/
               }
            </div>);
-  }
 };
+
+export default TodoList;
