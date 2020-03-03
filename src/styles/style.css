@@ -151,6 +151,9 @@
 }
 
 .todo .delete {
+  -ms-flex-item-align: end;
+      -ms-grid-row-align: end;
+      align-self: end;
   margin-right: 1em;
   height: 2.65em;
   cursor: pointer;
