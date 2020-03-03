@@ -51,8 +51,8 @@
   cursor: pointer;
   display: inline-block;
   padding: 0.7em 1.4em;
-  width: 8em;
-  margin: 1em;
+  min-width: 8em;
+  margin: 0.5em;
   border-radius: 0.15em;
   -webkit-box-sizing: border-box;
           box-sizing: border-box;
@@ -133,6 +133,12 @@
   padding: 0.5em;
 }
 
+.todo .checkbox {
+  width: 2.3em;
+  height: 2.3em;
+  margin: 0 !important;
+}
+
 .todo div {
   line-height: 2em;
   margin-left: 0.5em;
@@ -145,6 +151,7 @@
 }
 
 .todo .delete {
+  margin-right: 1em;
   height: 2.65em;
   cursor: pointer;
   display: inline-block;
@@ -171,7 +178,7 @@
 @media all and (max-width: 30em) {
   .todo .delete {
     display: block;
-    margin: 0.4em auto;
+    margin-left: 1em !important;
   }
 }
 
@@ -183,10 +190,10 @@
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  -webkit-box-orient: horizontal;
+  -webkit-box-orient: vertical;
   -webkit-box-direction: normal;
-      -ms-flex-direction: row;
-          flex-direction: row;
+      -ms-flex-direction: column;
+          flex-direction: column;
   margin: auto;
 }
 
@@ -200,6 +207,11 @@
   .App .todo {
     margin: 1em  auto;
     width: 25em;
+  }
+  .App .todo .checkbox {
+    width: 2.38em;
+    height: 2.38em;
+    margin: 0 !important;
   }
   .App div {
     max-width: 11em;

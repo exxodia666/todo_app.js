@@ -1,51 +1,74 @@
-import React, { Component } from 'react'
+import React, { useState } from 'react'
 import '../styles/style.css'
-//todo hooks
-export default class TodoList extends Component {
+import Item from './Item'
 
-  render() {
 
-    document.addEventListener('keydown', (e) => { if(e.code === 'Enter' && this.input.value) { addTodo(this.input.value); this.input.value = ''; e.preventDefault()}});
+const TodoListNew = props => {
+    const ALL = 'ALL';
+    const COMPLETED = 'COMPLETED';
+    const ACTIVE = 'ACTIVE';
+    //hook state
+    const [filter, setFilter] = useState(ALL);
+    const [input, setInput] = useState('');
 
-    const appState    = this.props.store;
-    const addTodo     = this.props.actions.addTodo;
-    const reverseTodo = this.props.actions.reverseTodo;
-    const deleteTodo  = this.props.actions.deleteTodo;
-
-    const listItems   = appState.map((item) => {
-      if(item.completed === true) { var liStyle = { 'textDecoration': 'line-through' }};
-      return (<li className = 'todo'>
-                              <a className = 'delete' onClick = { () => { deleteTodo(appState.indexOf(item))} }> Delete</a> 
-                              <div style = { liStyle }  onClick = { () => { reverseTodo({ completed: item.completed, id: appState.indexOf(item) });}}> 
-                                {item.text} 
-                              </div>
-              </li>);
+    /*Doesn`t work!!!
+    document.addEventListener('keydown', (e) => { 
+      console.log("props");
+      console.log(input);
+      if(e.code === 'Enter' && input) { 
+        props.actions.addTodo(input); 
+        setInput(''); 
+        e.preventDefault()
+      }
     });
+    */
 
-    let input = '';
-    return (
-            <div className='App'>
-                  <input placeholder=' Type your task'  type='text' ref =  { e => this.input = e} />
-                  <a className='add'  onClick = {  () => { if(this.input.value) { addTodo(this.input.value); this.input.value = '';}}} >
-                  Add
-                  </a>
-              <ul> 
-                { listItems }
-              </ul>
+    const mapItems = () => {
+      switch(filter) {
+        case ALL: return props.store.map((item) => <Item id = {props.store.indexOf(item)} actions = {props.actions} data = {item} />);
+        break;
+        case COMPLETED: return props.store.filter(item => item.completed === true).map((item) => <Item id = {props.store.indexOf(item)} actions = {props.actions} data = {item} />);
+        break;
+        case ACTIVE: return props.store.filter(item => item.completed === false).map((item) => <Item id = {props.store.indexOf(item)} actions = {props.actions} data = {item} />);
+        break;
+      }
+      
+    }
+
+    return(
+        <div className='App'>
+            <input placeholder='Type your task'  type='text' onChange = { e => setInput(e.target.value)} value={input} />
+
+            <a className='add'  
+               onClick = {  () => { 
+                 if(input) { 
+                   props.actions.addTodo(input); 
+                   setInput('');
+                  }
+                }
+              } >
+            Add
+            </a>
+            
+            <ul> 
+              {mapItems()} 
+            </ul>
 
               {/*Todo filtering*/}
               <div className='row'>
-                  <a className='filter'  onClick = { () => 1 } >
+                  <a className='filter'  onClick = { () => setFilter(ALL) } >
                   All
                   </a>
-                  <a className='filter'  onClick = { () => 1 } >
+                  <a className='filter'  onClick = { () => setFilter(COMPLETED) } >
                   Completed
                   </a>
-                  <a className='filter'  onClick = { () =>  1 } >
+                  <a className='filter'  onClick = { () =>  setFilter(ACTIVE) } >
                   Active
                   </a>
               </div>
 
-           </div>);
-  }
-};
+           </div>
+    );
+}
+
+export default TodoListNew;
