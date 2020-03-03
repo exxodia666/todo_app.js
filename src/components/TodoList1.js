@@ -1,3 +1,4 @@
+/*
 import React, { Component } from 'react'
 import '../styles/style.css'
 //todo hooks
@@ -79,7 +80,6 @@ export default class TodoList extends Component {
                 {checkFilter()} 
               </ul>
 
-              {/*Todo filtering*/}
               <div className='row'>
                   <a className='filter'  onClick = { () => this.setState({filter: ALL}) } >
                   All
@@ -94,4 +94,4 @@ export default class TodoList extends Component {
 
            </div>);
   }
-};
+};*/

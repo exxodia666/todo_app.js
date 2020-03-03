@@ -5,15 +5,12 @@ export function rootReducer(state = persistedState, action) {
     switch (action.type) {
         case actions.ADD_TODO: 
             return [...state, {id: ++state.length, text: action.data, completed: false}];
-
         case actions.DELETE_TODO:
             let newState = state;
             newState.splice(action.data, 1);
             return [...newState];
-
         case actions.COMPLETE_TODO: 
             return { };
-
         case actions.REVERSE_TODO: 
             let id = action.data.id;
             let completed = action.data.completed;
@@ -27,9 +24,6 @@ export function rootReducer(state = persistedState, action) {
                 return [...newState];
             } else { 
                 return [...state]}
-
-           
-
         default: return state;
     } 
 }

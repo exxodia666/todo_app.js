@@ -8,9 +8,10 @@ const TodoListNew = props => {
     const COMPLETED = 'COMPLETED';
     const ACTIVE = 'ACTIVE';
     //hook state
+    //filter state
     const [filter, setFilter] = useState(ALL);
+    //input state
     const [input, setInput] = useState('');
-
     /*Doesn`t work!!!
     document.addEventListener('keydown', (e) => { 
       console.log("props");
@@ -22,13 +23,16 @@ const TodoListNew = props => {
       }
     });
     */
-
+   //filters todos and renders them
     const mapItems = () => {
       switch(filter) {
+        //show all todos
         case ALL: return props.store.map((item) => <Item id = {props.store.indexOf(item)} actions = {props.actions} data = {item} />);
         break;
+        //show only completed
         case COMPLETED: return props.store.filter(item => item.completed === true).map((item) => <Item id = {props.store.indexOf(item)} actions = {props.actions} data = {item} />);
         break;
+        //show only active
         case ACTIVE: return props.store.filter(item => item.completed === false).map((item) => <Item id = {props.store.indexOf(item)} actions = {props.actions} data = {item} />);
         break;
       }
@@ -38,7 +42,7 @@ const TodoListNew = props => {
     return(
         <div className='App'>
             <input placeholder='Type your task'  type='text' onChange = { e => setInput(e.target.value)} value={input} />
-
+            {/*dispatches addTodo action*/}
             <a className='add'  
                onClick = {  () => { 
                  if(input) { 
@@ -66,9 +70,7 @@ const TodoListNew = props => {
                   Active
                   </a>
               </div>
-
            </div>
     );
 }
-
 export default TodoListNew;
