@@ -3,15 +3,9 @@ import { Link } from 'react-router-dom';
 //todo navigation
 const Header = () => {
     return(<nav className="navbar navbar-expand-lg navbar-light bg-light" >
-                <Link className="nav-item nav-link active navbar-brand"  to="/">
+                <h1 className="nav-item nav-link navbar-brand display-1" >
                     Tips Application
-                    <span className="sr-only">
-                    (current)
-                    </span>
-                </Link>
-                <Link className="nav-item nav-link" to="/about">
-                    About
-                </Link>
+                </h1>
             </nav>
     )
 };

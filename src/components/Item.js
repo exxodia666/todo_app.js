@@ -25,7 +25,7 @@ const Item = props => {
                             props.actions.reverseTodo({ completed: props.data.completed, id: props.id})
                         }
                     }/>
-                    <h3 className="d-inline p-2 bg-primar" style={liStyle}>{props.data.text}</h3>
+                    <h3 className="d-inline p-2 bg-primar display-5 font-weight-light" style={liStyle}>{props.data.text}</h3>
                 </div>
                 <button type="button" class="close mr-4" aria-label="Close" onClick = { () => { 
                     //event.preventDefault();
