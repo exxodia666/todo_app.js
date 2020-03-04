@@ -36,4 +36,15 @@ code {
   .note h3 {
     max-width: 68%;
   }
+  .note input{
+    margin:1em !important;
+  }
+}
+@media screen and (max-width: 220px) {
+  .note h3 {
+    max-width: 48%;
+  }
+  .note{
+    font-size: 1em;;
+  }
 }
