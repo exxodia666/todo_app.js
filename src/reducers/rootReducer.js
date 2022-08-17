@@ -9,8 +9,6 @@ export function rootReducer(state = persistedState, action) {
             let newState = state;
             newState.splice(action.data, 1);
             return [...newState];
-        case actions.COMPLETE_TODO: 
-            return { };
         case actions.REVERSE_TODO: 
             let id = action.data.id;
             let completed = action.data.completed;
