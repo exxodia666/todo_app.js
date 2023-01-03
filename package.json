@@ -6,13 +6,13 @@
   "dependencies": {
     "bootstrap": "^4.4.1",
     "build": "^0.1.4",
-    "eslint-loader": "^2.2.1",
+    "eslint-loader": "^4.0.2",
     "node-sass": "^7.0.0",
     "react": "^16.8.6",
     "react-dom": "^16.8.6",
     "react-redux": "^7.1.0",
     "react-router-dom": "^5.1.2",
-    "react-scripts": "^3.3.1",
+    "react-scripts": "^5.0.1",
     "redux": "^1.0.0-rc",
     "remote-redux-devtools": "^0.5.16"
   },
